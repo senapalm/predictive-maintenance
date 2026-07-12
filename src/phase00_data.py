@@ -15,7 +15,7 @@ RAW_DIR = ROOT_DIR / "data" / "raw"
 # Arquivo de destino
 DATASET_FILE = RAW_DIR / "manutencao_preditiva.csv"
 
-
+"Função para checar na url indicada e baixar"
 def baixar_manutencao_preditiva(force: bool = False) -> Path:
     """
     Faz o download do dataset de manutenção preditiva.
