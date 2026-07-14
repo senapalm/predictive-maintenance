@@ -1,5 +1,13 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 
+EXPLICATIVAS = [
+    "temperatura_ar_k",
+    "temperatura_processo_k",
+    "velocidade_rotacao_rpm",
+    "torque_nm",
+    "desgaste_ferramenta_min",
+]
 
 def identificar_duplicatas(df):
 
@@ -76,11 +84,10 @@ def checar_distribuicao(df):
     })
 
     print("=== Distribuição das Variáveis Numéricas ===")
-    display(distribuicao)
 
-    return distribuicao
+    return distribuicao.round(2)
 
-def definir_metodo_imputacao(distribuicao, dados_ausentes):
+def definir_metodo_imputacao(df):
     """
     Define o método de imputação para cada variável com dados ausentes.
 
@@ -93,6 +100,8 @@ def definir_metodo_imputacao(distribuicao, dados_ausentes):
         DataFrame com o método de imputação de cada variável.
     """
 
+    distribuicao = checar_distribuicao(df)
+    dados_ausentes = identificar_dados_ausentes(df)
     metodos = []
 
     for coluna in dados_ausentes.index:
@@ -150,3 +159,38 @@ def substituir_dados_ausentes(df, metodos_imputacao):
     print("\nImputação concluída.")
 
     return df_processado
+
+def plotar_boxplots(df):
+
+    for coluna in EXPLICATIVAS:
+        plt.figure(figsize=(6, 4))
+
+        df[[coluna]].boxplot()
+
+        plt.title(f"Boxplot - {coluna}")
+        plt.ylabel("Valores")
+
+        plt.show()
+
+def converter_booleanos(df):
+  
+    df_processado = df.copy()
+
+    colunas_booleanas = [
+        "falha_maquina",
+        "falha_twf",
+        "falha_hdf",
+        "falha_pwf",
+        "falha_osf",
+        "falha_rnf",
+    ]
+
+    print("=== Conversão de Variáveis Booleanas ===")
+
+    for coluna in colunas_booleanas:
+        df_processado[coluna] = df_processado[coluna].astype(bool)
+        print(f"{coluna}: convertido para bool")
+
+    print("\nConversão concluída.")
+
+    return df_processado    
