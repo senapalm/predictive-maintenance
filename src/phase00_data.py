@@ -15,8 +15,9 @@ RAW_DIR = ROOT_DIR / "data" / "raw"
 # Arquivo de destino
 DATASET_FILE = RAW_DIR / "manutencao_preditiva.csv"
 
+"Função para checar na url indicada e baixar"
 
-def baixar_manutencao_preditiva(force: bool = False) -> Path:
+def baixar_manutencao_preditiva(force: bool = False):
     """
     Faz o download do dataset de manutenção preditiva.
 
@@ -49,7 +50,7 @@ def baixar_manutencao_preditiva(force: bool = False) -> Path:
 
     return DATASET_FILE
 
-def carregar_dataset() -> pd.DataFrame:
+def carregar_dataset():
     if not DATASET_FILE.exists():
         raise FileNotFoundError(
             f"Dataset não encontrado em:\n{DATASET_FILE}"
