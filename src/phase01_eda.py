@@ -21,6 +21,10 @@ def mostrar_estatisticas(df):
     print("=== Estatísticas Descritivas ===")
     return df.describe()
 
+def mostrar_nan(df):
+    print("=== Valores Ausentes ===")
+    return df.isna().sum()
+
 def mostrar_graficos(df):
 
     PREDITORAS = [
