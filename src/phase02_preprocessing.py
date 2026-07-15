@@ -194,3 +194,32 @@ def converter_booleanos(df):
     print("\nConversão concluída.")
 
     return df_processado    
+
+def aplicar_one_hot_encoding(df, colunas):
+    """
+    Aplica One-Hot Encoding nas colunas categóricas informadas.
+
+    Parameters
+    ----------
+    df : pandas.DataFrame
+        DataFrame contendo os dados.
+
+    colunas : list
+        Lista com os nomes das colunas categóricas.
+
+    Returns
+    -------
+    pandas.DataFrame
+        DataFrame com as colunas codificadas.
+    """
+
+    df_processado = pd.get_dummies(
+        df,
+        columns=colunas,
+        dtype=bool
+    )
+
+    print("=== One-Hot Encoding ===")
+    print(f"Colunas codificadas: {', '.join(colunas)}")
+
+    return df_processado
