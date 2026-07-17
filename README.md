@@ -36,8 +36,7 @@ Variável alvo:
 predictive-maintenance/
 │
 ├── data/
-│   ├── raw/
-│   └── processed/
+│   └── raw/
 │
 ├── notebooks/
 │   └── projeto_final_sena.ipynb
