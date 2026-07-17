@@ -1,5 +1,33 @@
+# Python
 __pycache__/
-*.pyc
-.ipynb_checkpoints/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
 .venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# VS Code
 .vscode/
+
+# Sistema Operacional
+.DS_Store
+Thumbs.db
+
+# Arquivos temporários
+*.log
+*.tmp
+
+# Distribuição
+build/
+dist/
+*.egg-info/
+
+# Testes e cobertura
+.coverage
+.pytest_cache/
+htmlcov/
