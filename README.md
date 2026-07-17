@@ -110,9 +110,10 @@ Treinamento e otimização de:
 
 Comparação entre os modelos utilizando:
 
-- Accuracy
-- Matriz de Confusão
-- Relatório de Classificação
+- Accuracy no conjunto de teste
+- Tabela comparativa dos resultados
+- Seleção do modelo com melhor desempenho
+- Conclusão técnica sobre o modelo recomendadoS
 
 ---
 
