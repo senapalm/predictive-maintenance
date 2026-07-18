@@ -2,7 +2,7 @@
 
 Projeto avaliativo desenvolvido no contexto do Carreira Tech - Trilha de Inteligência Articial (Fundamentos de Dados, Programação e Análise Preditiva com Python), com o objetivo de construir um modelo de Machine Learning capaz de prever falhas em máquinas industriais a partir de dados operacionais.
 
-## Link para o video explicativo:
+## Link para o video explicativo: https://youtu.be/A6Bg8F16nbU
 ---
 
 ## Objetivo
